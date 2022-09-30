@@ -12,6 +12,13 @@ border {
 }
 
 
+.headshot {
+    height: 400px;
+    width: 600ox;
+    display: grid;
+    grid-template-columns: 2fr;
+}
+
 h1 {
     font-family: 'Yuji Syuku';
     font-style: normal;
@@ -70,7 +77,6 @@ h4 {
 
     color: #000000;
 }
-
 
 p {
     font-family: 'Yuji Syuku';
@@ -136,3 +142,16 @@ link{
     
     color: #886FA4;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+
+/* Media Query: moblie screen */
+@media all and (max-width: 600px) {
+    body {
+      background-color: rgb(60, 142, 94);
+    }
+  }
