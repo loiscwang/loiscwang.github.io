@@ -24,7 +24,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 20px;
     text-decoration: none;
-    color: #b872a4;
+    color: #7D9B67;
 } 
 
 
@@ -38,7 +38,7 @@ nav ul{
 
 
 nav ul li :hover{
-    color: #7D9B67;
+    color: #617751;
 }
 
 
@@ -56,7 +56,7 @@ h1 {
 h2 {
     font-family: 'Abril Fatface', cursive;
     font-weight: 200;
-    font-size: 30px;
+    font-size: 45px;
     text-decoration: none;
     color: #000000;
 }
@@ -96,30 +96,6 @@ p {
 }
 
 
-button {
-    box-sizing: border-box;
-
-    position: absolute;
-    width: 153px;
-    height: 33px;
-    
-    background: #FFFEED;
-    border-radius: 25px;
-
-
-    position: absolute;
-    width: 118px;
-    height: 22px;
-
-    font-family: 'Jacques Francois';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22px;
-
-    color: #000000;
-}
-
 .Homepg_button {
     text-decoration: none;
 }
@@ -150,7 +126,7 @@ link{
 div.about_grid_container {
     display: grid;
     padding: 50px;
-    grid-template-columns: 29% 1fr;
+    grid-template-columns: 33% 1fr;
 }
 
 .headshot {
@@ -165,15 +141,51 @@ div#bio {
     align-self: center;
 }
 
+
 /* resume.html ONLY*/
 
 
 
 /* blog.html ONLY*/
 div.blog_grid_container {
+    padding-top: 35px;
     display: grid;    
-    grid-template-columns: 10% 1fr 1fr 1fr 10%;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 5% 1fr 1fr 1fr 5%;
+    grid-auto-rows: 475px;
+}
+
+div#meals {
+    text-align: center;
+    grid-column: 3/ span 1; 
+    grid-row: 1/ span 1; 
+}
+.meals_title {
+    width: 4525x; 
+    height: 425px; 
+    object-fit: cover;
+    object-position: 40% 40%;
+}
+
+div#placeIcallhome {
+    text-align: center;
+    grid-column: 4/ span 1; 
+    grid-row: 1/ span 1; 
+}
+.PICH_title{
+    width: 425px; 
+    height: 425px; 
+    object-fit: cover;
+}
+
+div#Nash2022 {
+    text-align: center;
+    grid-column: 2/ span 1; 
+    grid-row: 1/ span 1; 
+}
+.Nash_title {
+    width: 425px; 
+    height: 425px; 
+    object-fit: cover;
 }
 
 /*contact.html ONLY*/ 
@@ -216,8 +228,91 @@ div#LinkedIn {
 
 
 /* Media Query: moblie screen */
-@media all and (max-width: 600px) {
-    body {
-      background-color: rgb(60, 142, 94);
+@media screen and (max-width: 400px) {
+    /* index.html ONLY*/
+    nav ul li a{
+        font-family: 'Jacques Francois', serif;
+        text-decoration: none;
+        font-size: 13px;
+        text-decoration: none;
+        color: #7D9B67;
     }
-  }
+    
+    .index_item_one {
+        display: grid;
+    
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        padding: 100px;
+        font-size: smaller;
+    }
+    
+    
+    /* about.html ONLY*/
+    div.about_grid_container {
+        display: grid;
+        padding: 50px;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr;
+
+    }
+    
+    .headshot {
+        grid-column: 1 / span 1;
+        height: 250x;
+        width: 200px;
+        align-self: flex-start;
+    }
+    
+    div#bio {
+        grid-column: 1/ span 1;
+        text-align: start;
+        align-self: center;
+    }
+
+    
+    /* blog.html ONLY*/
+    div.blog_grid_container {
+        padding-top: 35px;
+        display: block;    
+        grid-template-columns:5% 1fr 1fr 1fr 5%;
+        grid-auto-rows: 500px;
+    }
+
+
+    /*contact.html ONLY*/ 
+    div.contact_grid_container {
+        display: grid;
+        grid-template-columns:1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        padding: 50px;
+    }
+    
+    div#Get_In_Touch {
+        text-align: center;
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+        margin-top: -10px;
+    }
+    
+    
+    div#Email {
+        text-align: left;
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+        padding-top: 5px;
+    }
+    
+    div#Phone {
+        text-align: left;
+        grid-row: 3 / span 1;
+        grid-column: 1 / span 1;
+    }
+    
+    div#LinkedIn {
+        text-align: left;
+        grid-row: 4 / span 1;
+        grid-column: 1 / span 1;
+    }
+}
