@@ -1,62 +1,73 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url("https://use.typekit.net/qko0ncn.css");
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Yuji+Syuku&display=swap');
+
+
+
 * {
-    margin: 0; 
-    background-color: #FFFEED;
+    margin: 0;
+    padding: 2px;
+    box-sizing: border-box;
+    background-color: #F6EBD6;
   }
 
-border {
-    position: absolute;
-    width: 549px;
-    height: 5px;
-    
-    background: #886FA4;
+a:link { 
+    text-decoration: none; }
+a:visited { 
+    text-decoration: none; }
+
+
+nav ul li a{
+    font-family: 'Jacques Francois', serif;
+    text-decoration: none;
+    font-size: 20px;
+    text-decoration: none;
+    color: #b872a4;
+} 
+
+
+nav ul{
+    display: flex;
+    flex-direction:row-reverse;
+    align-self: flex-end;
+    gap: 25px;
+    list-style: none;
 }
 
 
-.headshot {
-    height: 400px;
-    width: 600ox;
-    display: grid;
-    grid-template-columns: 2fr;
+nav ul li :hover{
+    color: #7D9B67;
 }
+
 
 h1 {
-    font-family: 'Yuji Syuku';
-    font-style: normal;
+    font-family: 'Abril Fatface', cursive;
     font-weight: 400;
-    font-size: 32px;
-    line-height: 46px;
-    
+    font-size: 90px;
+    line-height: 80px;
+    text-justify: in;
+
     color: #000000;  
 }
 
 
 h2 {
-    position: absolute;
-    width: 167px;
-    height: 46px;
-    
-    font-family: 'Yuji Syuku';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 26px;
-    line-height: 38px;
-    /* identical to box height */
-    
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 200;
+    font-size: 30px;
+    text-decoration: none;
     color: #000000;
 }
 
 
 h3 {
-    position: absolute;
-    width: 115px;
-    height: 32px;
-
     font-family: 'Yuji Syuku';
     font-style: normal;
     font-weight: 400;
     font-size: 22px;
     line-height: 32px;
-    /* identical to box height */
 
 
     color: #000000;
@@ -64,19 +75,15 @@ h3 {
 
 
 h4 {
-    position: absolute;
-    width: 129px;
-    height: 29px;
-
-    font-family: 'Yuji Syuku';
+    font-family: 'Jacques Francois', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 29px;
-    /* identical to box height */
 
     color: #000000;
 }
+
 
 p {
     font-family: 'Yuji Syuku';
@@ -85,21 +92,6 @@ p {
     font-size: 17px;
     line-height: 25px;
 
-    color: #000000;
-}
-
-
-li {
-    position: absolute;
-    width: 126px;
-    height: 146px;
-    
-    font-family: 'Jacques Francois';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 22px;
-    
     color: #000000;
 }
 
@@ -128,12 +120,12 @@ button {
     color: #000000;
 }
 
+.Homepg_button {
+    text-decoration: none;
+}
+
 
 link{
-    position: absolute;
-    width: 143px;
-    height: 38px;
-    
     font-family: 'Jacques Francois';
     font-style: normal;
     font-weight: 400;
@@ -143,10 +135,84 @@ link{
     color: #886FA4;
 }
 
-.grid-container {
+/* index.html ONLY*/
+.index_item_one {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 300px;
 }
+
+
+/* about.html ONLY*/
+div.about_grid_container {
+    display: grid;
+    padding: 50px;
+    grid-template-columns: 29% 1fr;
+}
+
+.headshot {
+    grid-column: 1 / span 1;
+    height: 400x;
+    width: 370px;
+}
+
+div#bio {
+    grid-column: 2/ span 1;
+    text-align: justify;
+    align-self: center;
+}
+
+/* resume.html ONLY*/
+
+
+
+/* blog.html ONLY*/
+div.blog_grid_container {
+    display: grid;    
+    grid-template-columns: 10% 1fr 1fr 1fr 10%;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+/*contact.html ONLY*/ 
+div.contact_grid_container {
+    display: grid;
+    grid-template-columns: 1fr 10% 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 150px;
+}
+
+div#Get_In_Touch {
+    text-align: center;
+    text-indent: -20px;
+    align-self: center; 
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+    margin-top: -10px;
+}
+
+
+div#Email {
+    text-align: left;
+    grid-row: 1 / span 1;
+    grid-column: 3 / span 1;
+}
+
+div#Phone {
+    text-align: left;
+    grid-row: 2 / span 1;
+    grid-column: 3 / span 1;
+}
+
+div#LinkedIn {
+    text-align: left;
+    grid-row: 3 / span 1;
+    grid-column: 3 / span 1;
+}
+
+
 
 
 /* Media Query: moblie screen */
