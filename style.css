@@ -249,7 +249,6 @@ div#LinkedIn {
     /* index.html ONLY*/
     nav ul {
         gap: 0px;
-        padding-left: 7px;
     }
     
     nav ul li a{
@@ -258,6 +257,7 @@ div#LinkedIn {
         font-size: 13px;
         text-decoration: none;
         color: #7D9B67;
+        padding-left: 5px;
     }
     
     .index_item_one {
@@ -296,9 +296,10 @@ div#LinkedIn {
     
     /* blog.html ONLY*/
     div.blog_grid_container {
-        padding-top: 35px;
-        display: block;    
-        grid-template-columns:5% 1fr 1fr 1fr 5%;
+        padding-top: 0px;
+        padding-left: 0px;
+        display: grid;    
+        grid-template-columns:1px 1fr 1fr 1fr 1px;
         grid-auto-rows: 500px;
     }
 
