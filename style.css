@@ -249,6 +249,7 @@ div#LinkedIn {
     /* index.html ONLY*/
     nav ul {
         gap: 0px;
+        padding-left: 7px;
     }
     
     nav ul li a{
