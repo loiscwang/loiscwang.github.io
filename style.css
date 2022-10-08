@@ -245,7 +245,7 @@ div#LinkedIn {
 
 
 /* Media Query: moblie screen */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
     /* index.html ONLY*/
     nav ul li a{
         font-family: 'Jacques Francois', serif;
