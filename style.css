@@ -155,7 +155,7 @@ div.blog_grid_container {
     padding-top: 35px;
     display: grid;    
     grid-template-columns: 5% 1fr 1fr 1fr 5%;
-    grid-auto-rows: 475px;
+    grid-auto-rows: 500px;
 }
 
 figure#box2 {
@@ -189,6 +189,17 @@ figure#box1 {
 .box1_title {
     width: 425px; 
     height: 425px; 
+    object-fit: cover;
+}
+
+figure#box4 {
+    text-align: center;
+    grid-column: 2/ span 1; 
+    grid-row: 2/ span 1; 
+}
+.box4_title{
+    width: 425px; 
+    height: 500px; 
     object-fit: cover;
 }
 
