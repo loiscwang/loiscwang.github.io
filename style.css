@@ -10,7 +10,7 @@
     margin: 0;
     padding: 2px;
     box-sizing: border-box;
-    background-color: #F6EBD6;
+    background-color: #f4f2e5;
   }
 
 a:link { 
@@ -24,7 +24,7 @@ nav ul li a{
     text-decoration: none;
     font-size: 20px;
     text-decoration: none;
-    color: #7D9B67;
+    color: #5c574a;
 } 
 
 
@@ -38,9 +38,8 @@ nav ul{
 
 
 nav ul li :hover{
-    color: #617751;
+    color: #99b187;
 }
-
 
 h1 {
     font-family: 'Abril Fatface', cursive;
@@ -95,6 +94,13 @@ p {
     color: #000000;
 }
 
+figcaption {
+    color: #000000;
+}
+
+figcaption :hover {
+    color: #99b187;
+}
 
 .Homepg_button {
     text-decoration: none;
@@ -139,10 +145,8 @@ div#bio {
     grid-column: 2/ span 1;
     text-align: justify;
     align-self: center;
+    flex-wrap: wrap;
 }
-
-
-/* resume.html ONLY*/
 
 
 
@@ -154,39 +158,41 @@ div.blog_grid_container {
     grid-auto-rows: 475px;
 }
 
-div#meals {
+figure#box2 {
     text-align: center;
     grid-column: 3/ span 1; 
     grid-row: 1/ span 1; 
 }
-.meals_title {
-    width: 4525x; 
-    height: 425px; 
+.box2_title {
+    width: 425x; 
+    height: 500px; 
     object-fit: cover;
-    object-position: 40% 40%;
 }
 
-div#placeIcallhome {
+figure#box3 {
     text-align: center;
     grid-column: 4/ span 1; 
     grid-row: 1/ span 1; 
 }
-.PICH_title{
+.box3_title{
     width: 425px; 
     height: 425px; 
     object-fit: cover;
 }
 
-div#Nash2022 {
+figure#box1 {
     text-align: center;
     grid-column: 2/ span 1; 
     grid-row: 1/ span 1; 
+
 }
-.Nash_title {
+.box1_title {
     width: 425px; 
     height: 425px; 
     object-fit: cover;
 }
+
+
 
 /*contact.html ONLY*/ 
 div.contact_grid_container {
@@ -281,6 +287,7 @@ div#LinkedIn {
     }
 
 
+
     /*contact.html ONLY*/ 
     div.contact_grid_container {
         display: grid;
@@ -295,7 +302,6 @@ div#LinkedIn {
         grid-column: 1 / span 1;
         margin-top: -10px;
     }
-    
     
     div#Email {
         text-align: left;
