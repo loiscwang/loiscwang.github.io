@@ -9,18 +9,18 @@ const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
 
 /* Declaring the alternative text for each image file */
 const alts = {
-    'pic1.jpg' : 'Closeup of a human eye',
-    'pic2.jpg' : 'Rock that looks like a wave',
-    'pic3.jpg' : 'Purple and white pansies',
-    'pic4.jpg' : 'Section of wall from a pharoah\'s tomb',
-    'pic5.jpg' : 'Large moth on a leaf'
+    'pic1.jpg' : 'Lois and Elin in LA',
+    'pic2.jpg' : 'Lois and Emma in a Uber',
+    'pic3.jpg' : 'Uppies on game day',
+    'pic4.jpg' : 'Lois and Zhanna at Pike Place',
+    'pic5.jpg' : 'Yellowstone National Park'
 }
 
 /* Looping through images */
-for (const image of images) {
+for (const pic of images) {
   const newImage = document.createElement('img');
-  newImage.setAttribute('src', `images/${image}`);
-  newImage.setAttribute('alt', alts[image]);
+  newImage.setAttribute('src', `images/${pic}`);
+  newImage.setAttribute('alt', alts[pic]);
   thumbBar.appendChild(newImage);
   newImage.addEventListener('click', e => {
     displayedImage.src = e.target.src;
