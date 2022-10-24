@@ -11,7 +11,7 @@ const images = ['pic1.jpg', 'pic2.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
 const alts = {
     'pic1.jpg' : 'Lois and Elin in LA',
     'pic2.jpg' : 'Lois and Emma in a Uber',
-    'pic3.jpg' : 'Uppies on game day',
+    'pic3.jpg' : 'Uppies: Lois, Desyiah, and Elin on game day',
     'pic4.jpg' : 'Lois and Zhanna at Pike Place',
     'pic5.jpg' : 'Yellowstone National Park'
 }
@@ -30,12 +30,13 @@ for (const pic of images) {
 
 /* Wiring up the Darken/Lighten button */
 btn.addEventListener('click', () => {
-    const btnClass = btn.getAttribute('class');
-    if (btnClass === 'dark') {
+    const lightMode = btn.getAttribute("class");
+    if (lightMode === 'dark') {
       btn.setAttribute("class",'light');
       btn.textContent = 'Lighten';
-      overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
-    } else {
+      overlay.style.backgroundColor = 'rgba(0,0,0,0.3)';
+    } 
+    else {
       btn.setAttribute("class",'dark');
       btn.textContent = 'Darken';
       overlay.style.backgroundColor = 'rgba(0,0,0,0)';
