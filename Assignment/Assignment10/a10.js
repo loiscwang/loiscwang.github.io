@@ -71,8 +71,30 @@ console.log (totalSalary);
 
 
 //Question 5//
-if (employeeInfo["raiseEligible"] == true) {
-
+function raiseSalary() {
+    for (var i = 0; i < employeeInfo.length; i++) {
+        if(employeeInfo["raiseEligible"] == true) {
+            employeeInfo[i].raiseEligible = false;
+            employeeInfo[i].salary = (employeeInfo[i].salary)*10+(employeeInfo[i].salary);
+            return;
+        }
+    }
 }
+console.log (raiseSalary);
 
 
+
+
+//Question 6//
+var workingFromHomeInfo = ["Anna", "Sam"]
+for(var i = 0; i < employeeInfo.length; i++){
+    
+    if(employeeInfo[i].firstName == "Anna")
+       employeeInfo[i].wfh = "true";
+    if(employeeInfo[i].firstName == "Sam")
+       employeeInfo[i].wfh = "true";
+    else(
+        employeeInfo[i].wfh = "false"
+    )
+  }
+console.log (employeeInfo);
