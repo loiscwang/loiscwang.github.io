@@ -53,16 +53,26 @@ var anna = {
 
 employeeInfo.push(anna);
 console.log (employeeInfo);
-
 console.log(companyInfo);
 
 
 
-//Question 4//
 
+//Question 4//
 var totalSalary = (
-    (employeeInfo[0]['salary'])+ (employeeInfo[1]['salary'])+ (employeeInfo[2]['salary'])+ (employeeInfo[3]['salary'])
+    string0 = (employeeInfo[0]['salary']),  
+    string1 = (employeeInfo[1]['salary']),  
+    string2 = (employeeInfo[2]['salary']), 
+    string3 = (employeeInfo[3]['salary'])
 )
-console.log (totalSalary)
+console.log (totalSalary);
+
+
+
+
+//Question 5//
+if (employeeInfo["raiseEligible"] == true) {
+
+}
 
 
