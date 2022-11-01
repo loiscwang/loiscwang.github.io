@@ -1,0 +1,1 @@
+const quoteButtoon = document.querySelector('new-quote button')
