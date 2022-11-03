@@ -1,7 +1,7 @@
 const quoteButtoon = document.querySelector('.new-quote');
 quoteButtoon.addEventListener('click', getQuote);
 
-const endpoint = 'https://order-pizza-api.herokuapp.com/api/swagger.json';
+const endpoint = 'https://dog.ceo/api/breeds/image/random';
 
 async function getQuote () {
     //console.log('test click worked');
@@ -27,4 +27,7 @@ function displayQuote (x) {
     document.getElementById('js-quote-text').textContent = x;
 }
 
+var dogPic = <img src = {endpoint}></img>;
 getQuote();
+
+
