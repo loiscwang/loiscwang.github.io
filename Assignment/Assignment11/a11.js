@@ -1,7 +1,7 @@
 const quoteButtoon = document.querySelector('.new-quote');
 quoteButtoon.addEventListener('click', getQuote);
 
-const endpoint = 'https://dog.ceo/api/breeds/image/random';
+const endpoint = 'https://api.chucknorris.io/jokes/random';
 
 async function getQuote () {
     //console.log('test click worked');
