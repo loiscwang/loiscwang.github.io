@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Yuji+Syuku&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+
+
 html {
     box-sizing: border-box;
   }
@@ -12,7 +17,7 @@ html {
   
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    background-color: #e5b977;
+    background-color: #aba184;
   }
   
   .app {
@@ -31,6 +36,13 @@ html {
     text-align: center;
     padding: 10px;
     border-bottom: 1px solid #ebebeb;
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 80px;
+    text-justify: in;
+
+    color: black;  
   }
   
   .quotes {
@@ -41,6 +53,7 @@ html {
   .quote-text {
     padding-bottom: 20px;
     font-size: 25px;
+    font-family: 'Jacques Francois', serif;
     color: black;
   }
   
@@ -59,24 +72,25 @@ html {
     text-align: center;
     width: 100%;
     font-size: 20px;
+    font-family: 'Jacques Francois', serif;
   }
   
   .tbutton {
-    background-color: #e6b8b8;
+    background-color: #7c3737;
     text-decoration: none;
   }
   
   .tbutton:hover {
-    background-color: #c4a3ba;
+    background-color: #a44c4c;
   }
   
   .new-quote {
-    background-color: #85bb88;
+    background-color: #514823;
     margin-bottom: 15px;
   }
   
   .new-quote:hover {
-    background-color: #679d7d;
+    background-color: #746c4a;
   }
   
   .new-quote:disabled {
@@ -89,6 +103,7 @@ html {
     align-items: baseline;
     text-align: center;
     padding-top: 20px;
+    font-family: 'Jacques Francois', cursive;
     font-size: 25px;
     color: black;
   }
