@@ -1,7 +1,7 @@
 const quoteButtoon = document.querySelector('.new-quote');
 quoteButtoon.addEventListener('click', getQuote);
 
-const endpoint = 'https://api.chucknorris.io/jokes/random';
+const endpoint = 'https://official-joke-api.appspot.com/random_joke';
 
 async function getQuote () {
     //console.log('test click worked');
@@ -10,10 +10,11 @@ async function getQuote () {
     
     let json_response = JSON.parse(response);
     //console.log(json_response);
-    console.log(json_response['message']);
+    console.log(json_response['setup']);
      //.then(text => text.text());
+    displayQuote(json_response['setup']);
 
-    displayQuote(json_response['message']);
+
 }
 
 function displayQuote (x) {
@@ -27,7 +28,24 @@ function displayQuote (x) {
     document.getElementById('js-quote-text').textContent = x;
 }
 
-var dogPic = <img src = {endpoint}></img>;
+//punchline
+//quoteBox.appendChild(['punchline'])
+
+
+async function getPunchline () {
+    //console.log('test click worked');
+    let text = await fetch(endpoint);
+    let response = await text.text();
+    
+    let json_response = JSON.parse(response);
+    console.log(json_response);
+    console.log(json_response['punchline']);
+     //.then(text => text.text());
+    textContent.appendChild(json_response['punchline']);
+}
+
+
 getQuote();
+
 
 
