@@ -49,7 +49,7 @@ html {
     padding: 20px 50px;
   }
   
-  .button {
+  button {
     display: block;
     color: white;
     border-radius: 4px;
@@ -59,15 +59,14 @@ html {
     text-align: center;
     width: 100%;
     font-size: 20px;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
   }
   
-  .twitter {
+  .tbutton {
     background-color: #e6b8b8;
     text-decoration: none;
   }
   
-  .twitter:hover {
+  .tbutton:hover {
     background-color: #c4a3ba;
   }
   
@@ -84,6 +83,14 @@ html {
     background-color: #cccccc;
     color: #666666;
     cursor: not-allowed;
+  }
+
+  .answer-text {
+    align-items: baseline;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    color: black;
   }
   
   @media screen and (max-width: 600px) {
