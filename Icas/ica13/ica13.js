@@ -13,9 +13,10 @@ const aliceTumbling = [
   const alice2 = document.querySelector("#alice2");
   const alice3 = document.querySelector("#alice3");
 
-
+  //this is for the first one//
   alice1.animate(aliceTumbling, aliceTiming);
 
+  //for the rest of then=m//
   alice1.animate(aliceTumbling, aliceTiming).finished
   .then(() => alice2.animate(aliceTumbling, aliceTiming).finished)
   .then(() => alice3.animate(aliceTumbling, aliceTiming).finished);
@@ -24,9 +25,7 @@ const aliceTumbling = [
 
   function tumbleAlice () {
     const animateObject = alice1.animate(aliceTumbling, aliceTiming);
-    // 1 second after the aliceTiming duration
     let intverval = 2001;
-    // The global setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires. 
     setTimeout (() => {
         const animateObject2 = alice2.animate(aliceTumbling, aliceTiming);
         const interval1 = 2001;
