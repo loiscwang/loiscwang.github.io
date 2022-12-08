@@ -1,6 +1,6 @@
 var i = 0;
-var txt = 'Lorem ipsum typing effect!'; /* The text */
-var speed = 50; /* The speed/duration of the effect in milliseconds */
+var txt = 'Oh, hey there'; /* The text */
+var speed = 40; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter() {
   if (i < txt.length) {
