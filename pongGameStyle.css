@@ -18,7 +18,6 @@ body {
 .paddle_left, .paddle_right{
     --position: 50;
 
-
     position: absolute;
     background-color: var(--foreground-color);
     top: calc(var(--position)* 1vh); 
@@ -38,6 +37,21 @@ body {
 .ball {
     --x:50; 
     --y:50; 
+
+    position: absolute;
+    background-color: var(--foreground-color);
+    left: calc(var(--x)* 1vw); 
+    top: calc(var(--y)* 1vh); 
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.5vh; 
+    height: 2.5vh; 
 }
 
-
+.score {
+    display: flex; 
+    justify-content: center;
+    font-weight: bold;
+    font-size: 7vh;
+    color: var(--foreground-color);
+}
