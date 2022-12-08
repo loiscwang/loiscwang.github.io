@@ -1,0 +1,43 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --hue: 300;
+    --saturation: 50%; 
+    --foreground-color: hsl(var(--hue),var(--saturation),75%);
+    --background-color: hsl(var(--hue),var(--saturation),20%);
+}
+
+body {
+    margin: 0; 
+    background-color: var(--background-color);
+}
+
+
+.paddle_left, .paddle_right{
+    --position: 50;
+
+
+    position: absolute;
+    background-color: var(--foreground-color);
+    top: calc(var(--position)* 1vh); 
+    transform: translateY(-50%);
+    width: 1vh; 
+    height: 10vh; 
+}
+
+.paddle_right{
+    right:1vw;
+}
+
+.paddle_left{
+    left:1vw;
+}
+
+.ball {
+    --x:50; 
+    --y:50; 
+}
+
+
