@@ -9,5 +9,4 @@ function typeWriter() {
     setTimeout(typeWriter, speed);
   }
 }
-
 console.log ()
