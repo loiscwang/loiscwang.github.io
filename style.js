@@ -1,12 +1,14 @@
+// typing effect on index.html //////////////////////////////////////////////////////////////////////
 var i = 0;
-var txt = 'Oh, hey there'; /* The text */
-var speed = 40; /* The speed/duration of the effect in milliseconds */
-
+var txt = 'Oh, hey there';
+var speed = 75;
+        
 function typeWriter() {
-  if (i < txt.length) {
-    document.getElementById("index_item_one").innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed);
-  }
+    if (i < txt.length) {
+        document.getElementById("typingHeader").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
 }
-console.log ()
+window.onload = typeWriter ()
+
