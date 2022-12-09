@@ -55,3 +55,14 @@ body {
     font-size: 7vh;
     color: var(--foreground-color);
 }
+
+.score > * {
+    flex-grow: 1;
+    flex-basis: 0;
+    padd
+}
+
+.score > :first-child {
+    text-align: right; 
+
+}
