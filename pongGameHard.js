@@ -1,40 +1,13 @@
 import Ball from "./ball.js"
+import ball2 from "./ball2.js"
 import Paddle from "./paddle.js"
-
-//const startMenu = document.getElementById('startMenu')
-//const gameOverMenu = document.getElementById('gameOverMenu')
-//const gameInProgress = false
 
 const ball = new Ball(document.getElementById("ball"))
 const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
-const startMenu = document.getElementById('startMenu')
 
-//window.addEventListener('resize', windowResize);
-//const startButton = document.querySelector('.startButton');
-//startButton.addEventListener('click', startGame);
-//againBtn.addEventListener('click', resetGame);
-
-
-/*startMenu.className = 'active';
-gameOverMenu.className = '';*/
-
-
-/*function pauseGame() {
-  if(!gamePaused) {
-    gamePaused = true;
-    gameplay.className = '';
-    pauseMenu.className = 'active';
-    clearInterval(gameInterval);
-  }
-}
-
-function startGame() {
-}*/
-
-//delta is the time that the ball has been running/////////////////  
 let lastTime
 function update(time) {
   if (lastTime != null) {

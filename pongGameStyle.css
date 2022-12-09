@@ -47,3 +47,35 @@ body {
     width: 2.6vh; 
     height: 2.6vh; 
 }
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+}
+
+div.startMenu {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;  
+    align-content: center;
+}
+
+button {
+    background-color: white;
+    border: 0;
+    border-radius: 200px;
+    padding: 16px 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.25px;
+    font-size: 16px;
+    margin: 16px;
+    min-width: 160px;
+    outline: none;
+    transition: .25s;
+    opacity: .75;
+    cursor: pointer;
+}
