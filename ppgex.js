@@ -38,13 +38,11 @@ paddleOneY = canvas.height/2 - paddleHeight/2;
 paddleTwoY = canvas.height/2 - paddleHeight/2;
 ballVelocityY = getRandomNumber(-5,5) * (.25 * difficultyLevel),
 
-window.addEventListener('resize', windowResize);
 startBtn.addEventListener('click', startGame);
 continueBtn.addEventListener('click', resumeGame);
 restartBtn.addEventListener('click', resetGame);
 againBtn.addEventListener('click', resetGame);
-document.addEventListener('keydown', keyDown);
-document.addEventListener('keyup', keyUp);
+
 
 startMenu.className = 'active';
 pauseMenu.className = '';

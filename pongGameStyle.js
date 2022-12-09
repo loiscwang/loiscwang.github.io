@@ -23,8 +23,17 @@ startButton.addEventListener('click', startGame);
 gameOverMenu.className = '';*/
 
 
+function pauseGame() {
+  if(!gamePaused) {
+    gamePaused = true;
+    gameplay.className = '';
+    pauseMenu.className = 'active';
+    clearInterval(gameInterval);
+  }
+}
+
+
 function startGame() {
-  
 }
 
 let lastTime
@@ -46,13 +55,6 @@ function update(time) {
   window.requestAnimationFrame(update)
 }
 
-
-
-
-
-
-
-
 function isLose() {
   const rect = ball.rect()
   return rect.right >= window.innerWidth || rect.left <= 0
@@ -61,16 +63,14 @@ function isLose() {
 function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
-    ball.reset()
-    computerPaddle.reset()
-  } 
-  
-  else {
-    alert("Sorry dude. try better next time.")
+    playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1
+  } else {
+    computerScoreElem.textContent = parseInt(computerScoreElem.textContent) + 1
   }
   ball.reset()
   computerPaddle.reset()
 }
+
 
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
