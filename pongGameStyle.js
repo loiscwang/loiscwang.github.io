@@ -1,3 +1,4 @@
+
 import Ball from "./ball.js"
 import Paddle from "./paddle.js"
 
@@ -7,6 +8,14 @@ const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 
+
+
+function startGame () {
+
+} 
+
+
+//updating the Vel. of the ball////////////////////////////////////////////////////////
 let lastTime
 function update(time) {
   if (lastTime != null) {
@@ -42,6 +51,14 @@ function handleLose() {
   computerPaddle.reset()
 }
 
+function endGame () {
+
+} 
+
+
+
+
+//player-paddle moving with the mouse////////////////////////////////////////////////////////
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
