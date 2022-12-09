@@ -9,16 +9,21 @@ const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 
 
+var startButtoon = document.querySelector('.startButton');
+startButtoon.addEventListener('click', startGame);
 
-function startGame () {
+async function startGame () {
 
 } 
 
+window.onblur = function() { 
+}
 
-//updating the Vel. of the ball////////////////////////////////////////////////////////
+
 let lastTime
-function update(time) {
-  if (lastTime != null) {
+//updating the Vel. of the ball////////////////////////////////////////////////////////
+async function update(time) {
+    if (lastTime != null) {
     const delta = time - lastTime
     ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()])
     computerPaddle.update(delta, ball.y)
@@ -29,10 +34,10 @@ function update(time) {
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
     if (isLose()) handleLose()
-  }
+    }
 
   lastTime = time
-  window.requestAnimationFrame(update)
+  onclick.requestAnimationFrame(update)
 }
 
 function isLose() {
@@ -50,6 +55,7 @@ function handleLose() {
   ball.reset()
   computerPaddle.reset()
 }
+
 
 function endGame () {
 

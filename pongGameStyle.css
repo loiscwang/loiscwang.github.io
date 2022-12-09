@@ -22,7 +22,7 @@ body {
     background-color: var(--foreground-color);
     top: calc(var(--position)* 1vh); 
     transform: translateY(-50%);
-    width: 1vh; 
+    width: 1.1vh; 
     height: 10vh; 
 }
 
@@ -44,6 +44,6 @@ body {
     top: calc(var(--y)* 1vh); 
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    width: 2.5vh; 
-    height: 2.5vh; 
+    width: 2.6vh; 
+    height: 2.6vh; 
 }
