@@ -2,28 +2,34 @@
 import Ball from "./ball.js"
 import Paddle from "./paddle.js"
 
+//const startMenu = document.getElementById('startMenu')
+//const gameOverMenu = document.getElementById('gameOverMenu')
+//const gameInProgress = false
+
 const ball = new Ball(document.getElementById("ball"))
 const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
+const startMenu = document.getElementById('startMenu')
+
+//window.addEventListener('resize', windowResize);
+const startButton = document.querySelector('.startButton');
+startButton.addEventListener('click', startGame);
+//againBtn.addEventListener('click', resetGame);
 
 
-var startButtoon = document.querySelector('.startButton');
-startButtoon.addEventListener('click', startGame);
+/*startMenu.className = 'active';
+gameOverMenu.className = '';*/
 
-async function startGame () {
 
-} 
-
-window.onblur = function() { 
+function startGame() {
+  
 }
 
-
 let lastTime
-//updating the Vel. of the ball////////////////////////////////////////////////////////
-async function update(time) {
-    if (lastTime != null) {
+function update(time) {
+  if (lastTime != null) {
     const delta = time - lastTime
     ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()])
     computerPaddle.update(delta, ball.y)
@@ -34,11 +40,18 @@ async function update(time) {
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
     if (isLose()) handleLose()
-    }
+  }
 
   lastTime = time
-  onclick.requestAnimationFrame(update)
+  window.requestAnimationFrame(update)
 }
+
+
+
+
+
+
+
 
 function isLose() {
   const rect = ball.rect()
@@ -48,23 +61,17 @@ function isLose() {
 function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
-    playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1
-  } else {
-    computerScoreElem.textContent = parseInt(computerScoreElem.textContent) + 1
+    ball.reset()
+    computerPaddle.reset()
+  } 
+  
+  else {
+    alert("Sorry dude. try better next time.")
   }
   ball.reset()
   computerPaddle.reset()
 }
 
-
-function endGame () {
-
-} 
-
-
-
-
-//player-paddle moving with the mouse////////////////////////////////////////////////////////
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
