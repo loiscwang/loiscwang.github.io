@@ -4,8 +4,8 @@
 
 /* changing colors and make the backgournd and the objects have a nice contracts */
 :root {
-    --hue: 100;
-    --saturation: 50%; 
+    --hue: 300;
+    --saturation: 60%; 
     --foreground-color: hsl(var(--hue),var(--saturation),75%);
     --background-color: hsl(var(--hue),var(--saturation),20%);
 }
