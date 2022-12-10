@@ -39,9 +39,9 @@ function isLose() {
 function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
-    playerScoreElem.textContent = parseInt(playerScoreElem.textContent) - 1
+    window.location.href = "pongGameRestart.html";
   } else {
-    computerScoreElem.textContent = parseInt(computerScoreElem.textContent) - 1
+    window.location.href = "pongGameRestart.html";
   }
   ball.reset()
   computerPaddle.reset()
@@ -55,9 +55,9 @@ function isLose2() {
 function handleLose2() {
     const rect = ball2.rect()
     if (rect.right >= window.innerWidth) {
-      playerScoreElem.textContent = parseInt(playerScoreElem.textContent) - 1
+        window.location.href = "pongGameRestart.html";
     } else {
-      computerScoreElem.textContent = parseInt(computerScoreElem.textContent) - 1
+        window.location.href = "pongGameRestart.html";
     }
     ball.reset()
     computerPaddle.reset()

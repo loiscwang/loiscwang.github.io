@@ -40,7 +40,7 @@ function update(time) {
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
-    if (isLose()) handleLose() (endGame())
+    if (isLose()) handleLose()
   }
 
   lastTime = time
@@ -51,28 +51,25 @@ function isLose() {
   const rect = ball.rect()
   return rect.right >= window.innerWidth || rect.left <= 0
 }
-
-function handleLose() {
-  const rect = ball.rect()
-  if (rect.right >= window.innerWidth) {
-    playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1;
-    endGame()
-  } else {
-    computerScoreElem.textContent = parseInt(computerScoreElem.textContent) + 1
-    endGame()
-  }
-  ball.reset()
-  computerPaddle.reset()
-}
-
-function endGame () {
+/* async function endGame () {
   if (computerScoreElem >= 2) {
     endGameElement.show(endGame-screen)
   }
   else if (playerScoreElem >= 2) {
-    endGameElement.show(endGame-screen)
+    endGameElement.toggleAttribute('endGame-screen')
     console.log("haha")
   }
+}*/
+
+function handleLose() {
+  const rect = ball.rect()
+  if (rect.right >= window.innerWidth) {
+    window.location.href = "pongGameRestart.html";
+  } else {
+    window.location.href = "pongGameRestart.html";
+  }
+  ball.reset()
+  computerPaddle.reset()
 }
 
 document.addEventListener("mousemove", e => {

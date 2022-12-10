@@ -73,9 +73,13 @@ h1 {
     text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 1.25px;
+    display: flex;
+    align-self: center;
+    justify-content: center; 
+
 }
 
-div.startMenu {
+div.startMenu, .endGame-screen {
     display: flex;
     flex-direction: row;
     align-self: center;
@@ -99,24 +103,3 @@ button {
     opacity: .75;
     cursor: pointer;
 }
-
-.score {
-    display: flex;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 7vh;
-    color: var(--foreground-color);
-  }
-  
-.score > * {
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 0 2vh;
-    margin: 1vh 0;
-    opacity: .5;
-  }
-  
-.score > :first-child {
-    text-align: right;
-    border-right: .5vh solid var(--foreground-color);
-  }
