@@ -10,7 +10,6 @@ const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
-const startMenu = document.getElementById('startMenu')
 
 //window.addEventListener('resize', windowResize);
 //const startButton = document.querySelector('.startButton');
@@ -59,7 +58,7 @@ function isLose() {
   return rect.right >= window.innerWidth || rect.left <= 0
 }
 
-function handleLose() {
+/*function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
     playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1
@@ -68,11 +67,16 @@ function handleLose() {
   }
   ball.reset()
   computerPaddle.reset()
-}
-
+}*/
 
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
 
 window.requestAnimationFrame(update)
+
+/*function endGame () {
+  if (computerScoreElem == 2) or (playerScoreElem == 2) {
+    alert('Boooo')
+  }
+}*/
