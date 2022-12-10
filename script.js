@@ -1,6 +1,6 @@
 // typing effect on index.html //////////////////////////////////////////////////////////////////////
 var i = 0;
-var txt = 'Oh, hey there';
+var txt = 'Oh, hey!';
 var speed = 75;
         
 function typeWriter() {
