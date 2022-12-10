@@ -43,7 +43,7 @@ nav ul li :hover{
 h1 {
     font-family: 'Abril Fatface', cursive;
     font-weight: 400;
-    font-size: 70px;
+    font-size: 65px;
     line-height: 80px;
     text-justify: in;
 
@@ -106,7 +106,7 @@ figcaption :hover {
 }
 
 
-link{
+link {
     font-family: 'Jacques Francois';
     font-style: normal;
     font-weight: 400;
@@ -147,7 +147,9 @@ div#bio {
     flex-wrap: wrap;
 }
 
-
+.headshot{
+    border-radius: 2vh;
+}
 
 /* blog.html ONLY*/
 div.blog_grid_container {

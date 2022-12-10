@@ -1,7 +1,7 @@
 // typing effect on index.html //////////////////////////////////////////////////////////////////////
 var i = 0;
 var txt = 'Oh, hey!';
-var speed = 75;
+var speed = 100;
         
 function typeWriter() {
     if (i < txt.length) {
@@ -13,6 +13,4 @@ function typeWriter() {
 window.onload = typeWriter ()
 
 
-
-// play.html ////////////////////////////////////////////////////////////////////////////////////// 
 
