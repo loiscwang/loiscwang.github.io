@@ -6,10 +6,8 @@ const ball2 = new Ball(document.getElementById("ball2"))
 const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const computerPaddle2 = new Paddle(document.getElementById("computer-paddle2"))
-const playerScoreElem = document.getElementById("player-score")
-const computerScoreElem = document.getElementById("computer-score")
 
-//frist ball////
+//This is for the timing/velcity of the ball////
 let lastTime
 function update(time) {
   if (lastTime != null) {
@@ -33,13 +31,11 @@ function update(time) {
   window.requestAnimationFrame(update)
 }
 
-
-
+//This is for the first ball////
 function isLose() {
   const rect = ball.rect()
   return rect.right >= window.innerWidth || rect.left <= 0
   }
-
 function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
@@ -51,12 +47,12 @@ function handleLose() {
   computerPaddle.reset()
 }
 
+//This is for the second ball////
 function isLose2() {
     const rect = ball2.rect()
     return rect.right >= window.innerWidth || rect.left <= 0
-    }
-  
-  function handleLose2() {
+}
+function handleLose2() {
     const rect = ball2.rect()
     if (rect.right >= window.innerWidth) {
       playerScoreElem.textContent = parseInt(playerScoreElem.textContent) - 1
@@ -65,9 +61,9 @@ function isLose2() {
     }
     ball.reset()
     computerPaddle.reset()
-  }
+}
 
-
+//The player paddle contorl////////////
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
