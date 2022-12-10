@@ -1,6 +1,5 @@
 import Ball from "./ball.js"
 import Paddle from "./paddle.js"
-import gameloop from "./gameloops.js"
 
 //const startMenu = document.getElementById('startMenu')
 //const gameOverMenu = document.getElementById('gameOverMenu')
@@ -9,21 +8,13 @@ import gameloop from "./gameloops.js"
 const ball = new Ball(document.getElementById("ball"))
 const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
+const endGameElement = document.getElementById('endGame-screen')
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 
 
 /*startMenu.className = 'active';
 gameOverMenu.className = '';*/
-
-
-function endGame () {
-  if (computerScoreElem >= 2) {
-    this.toggleScreen('gameover-screen',true);
-    clearInterval(this.loop);
-    console.log();
-  }
-}
 
 /*function pauseGame() {
   if(!gamePaused) {
@@ -33,7 +24,6 @@ function endGame () {
     clearInterval(gameInterval);
   }
 }
-
 function startGame() {
 }*/
 
@@ -50,7 +40,7 @@ function update(time) {
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
-    if (isLose()) handleLose(); endGame()
+    if (isLose()) handleLose() (endGame())
   }
 
   lastTime = time
@@ -65,12 +55,24 @@ function isLose() {
 function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
-    playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1
+    playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1;
+    endGame()
   } else {
     computerScoreElem.textContent = parseInt(computerScoreElem.textContent) + 1
+    endGame()
   }
   ball.reset()
   computerPaddle.reset()
+}
+
+function endGame () {
+  if (computerScoreElem >= 2) {
+    endGameElement.show(endGame-screen)
+  }
+  else if (playerScoreElem >= 2) {
+    endGameElement.show(endGame-screen)
+    console.log("haha")
+  }
 }
 
 document.addEventListener("mousemove", e => {
@@ -78,53 +80,7 @@ document.addEventListener("mousemove", e => {
 })
 
 
-
-//game loops/////
-let gameloop = new GameLoop();
-let timer = 0;
-
-gameloop.init = function() {
-    timer = 0;
-    ball.init(gameloop.cnv);
-}
-
-gameloop.resize = function() {
-    ball.resize(gameloop.cnv);
-}
-
-gameloop.update = function() {
-    timer++;
-    ball.update(gameloop.cnv);
-    if ( timer > 120 ) {
-        gameloop.stop();
-    }
-}
-
-gameloop.render = function() {
-    gameloop.ctx.fillStyle = '#1bafdb';         
-    gameloop.ctx.fillRect(0,0, gameloop.cnv.width, gameloop.cnv.height);
-    ball.render(gameloop.ctx);
-}
-
-window.onload = function() {
-}
-
-window.onresize = function() {
-    gameloop.onresize();
-}
-
-function startGame() {
-    gameloop.start();
-}
-
-
-
-
-
-
-
 window.requestAnimationFrame(update)
-
 
 
 
