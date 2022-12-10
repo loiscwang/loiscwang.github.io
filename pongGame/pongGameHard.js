@@ -63,8 +63,8 @@ function endGame2() {
 console.log()
 
 //The player paddle contorl////////////
-document.addEventListener("mousemove", e => {
-  playerPaddle.position = (e.y / window.innerHeight) * 100
+document.addEventListener("mousemove", i => {
+  playerPaddle.position = (i.y / window.innerHeight) * 100
 })
 
 window.requestAnimationFrame(update)
