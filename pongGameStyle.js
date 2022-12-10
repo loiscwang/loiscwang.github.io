@@ -1,5 +1,6 @@
 import Ball from "./ball.js"
 import Paddle from "./paddle.js"
+import gameloop from "./gameloops.js"
 
 //const startMenu = document.getElementById('startMenu')
 //const gameOverMenu = document.getElementById('gameOverMenu')
@@ -11,15 +12,18 @@ const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 
-//window.addEventListener('resize', windowResize);
-//const startButton = document.querySelector('.startButton');
-//startButton.addEventListener('click', startGame);
-//againBtn.addEventListener('click', resetGame);
-
 
 /*startMenu.className = 'active';
 gameOverMenu.className = '';*/
 
+
+function endGame () {
+  if (computerScoreElem >= 2) {
+    this.toggleScreen('gameover-screen',true);
+    clearInterval(this.loop);
+    console.log();
+  }
+}
 
 /*function pauseGame() {
   if(!gamePaused) {
@@ -46,7 +50,7 @@ function update(time) {
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
-    if (isLose()) handleLose()
+    if (isLose()) handleLose(); endGame()
   }
 
   lastTime = time
@@ -58,7 +62,7 @@ function isLose() {
   return rect.right >= window.innerWidth || rect.left <= 0
 }
 
-/*function handleLose() {
+function handleLose() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
     playerScoreElem.textContent = parseInt(playerScoreElem.textContent) + 1
@@ -67,16 +71,63 @@ function isLose() {
   }
   ball.reset()
   computerPaddle.reset()
-}*/
+}
 
 document.addEventListener("mousemove", e => {
   playerPaddle.position = (e.y / window.innerHeight) * 100
 })
 
+
+
+//game loops/////
+let gameloop = new GameLoop();
+let timer = 0;
+
+gameloop.init = function() {
+    timer = 0;
+    ball.init(gameloop.cnv);
+}
+
+gameloop.resize = function() {
+    ball.resize(gameloop.cnv);
+}
+
+gameloop.update = function() {
+    timer++;
+    ball.update(gameloop.cnv);
+    if ( timer > 120 ) {
+        gameloop.stop();
+    }
+}
+
+gameloop.render = function() {
+    gameloop.ctx.fillStyle = '#1bafdb';         
+    gameloop.ctx.fillRect(0,0, gameloop.cnv.width, gameloop.cnv.height);
+    ball.render(gameloop.ctx);
+}
+
+window.onload = function() {
+}
+
+window.onresize = function() {
+    gameloop.onresize();
+}
+
+function startGame() {
+    gameloop.start();
+}
+
+
+
+
+
+
+
 window.requestAnimationFrame(update)
 
-/*function endGame () {
-  if (computerScoreElem == 2) or (playerScoreElem == 2) {
-    alert('Boooo')
-  }
-}*/
+
+
+
+
+
+

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pongGameStyle.css">
     <script src="pongGameStyle.js" type="module">  </script>
+    <script src="gameloops.js"></script>
     <title>Easy Pong</title>
 </head>
 <body>
@@ -21,7 +22,7 @@
     <div class="endGame-screen" style="display:none">
         <h1> Game Over. </h1>
         <a class ="restartButton" id="restartButton" href="pongGameStarter.html">
-            <button>Again.</button>
+            <button onclick='startGame()'>Again.</button>
         </a>
     </div>
 </body>
