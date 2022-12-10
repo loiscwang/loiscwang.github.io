@@ -308,7 +308,7 @@ img {
     
     /* blog.html ONLY*/
     div.blog_grid_container {
-        padding-top: 35px;
+        padding-top: 30px;
         padding-left: 0px;
         display: grid;    
         grid-template-columns: 1fr;
