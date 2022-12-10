@@ -1,4 +1,4 @@
-const INITIAL_VELOCITY = 0.035
+const INITIAL_VELOCITY = 0.025
 const VELOCITY_INCREASE = 0.000001
 
 export default class Ball {
@@ -47,7 +47,7 @@ export default class Ball {
     this.y += this.direction.y * this.velocity * delta
     this.velocity += VELOCITY_INCREASE * delta
     const rect = this.rect()
-
+///this part is for ball boucing of the inner walls///
     if (rect.bottom >= window.innerHeight || rect.top <= 0) {
       this.direction.y *= -1
     }

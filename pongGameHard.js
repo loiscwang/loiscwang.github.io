@@ -1,10 +1,11 @@
-import Ball from "./ball"
+import Ball from "./ball2.js"
 import Paddle from "./paddle.js"
 
 const ball = new Ball(document.getElementById("ball"))
 const ball2 = new Ball(document.getElementById("ball2")) 
 const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
+const computerPaddle2 = new Paddle(document.getElementById("computer-paddle2"))
 const playerScoreElem = document.getElementById("player-score")
 const computerScoreElem = document.getElementById("computer-score")
 
@@ -15,34 +16,17 @@ function update(time) {
     const delta = time - lastTime
     ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()])
     computerPaddle.update(delta, ball.y)
+    ball2.update(delta, [playerPaddle.rect(), computerPaddle2.rect()])
+    computerPaddle2.update(delta, ball2.y)
+
     const hue = parseFloat(
       getComputedStyle(document.documentElement).getPropertyValue("--hue")
     )
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
-    if (isLose()) handleLose()
-  }
-
-  lastTime = time
-  window.requestAnimationFrame(update)
-}
-
-
-///second ball////////
-let lastTime2
-function update2(time) {
-  if (lastTime != null) {
-    const delta = time - lastTime
-    ball2.update(delta, [playerPaddle.rect(), computerPaddle.rect()])
-    computerPaddle.update(delta, ball2.y)
-    const hue = parseFloat(
-      getComputedStyle(document.documentElement).getPropertyValue("--hue")
-    )
-
-    document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
-
-    if (isLose()) handleLose()
+    if (isLose()) handleLose() 
+    else if (isLose2()) handleLose2() 
   }
 
   lastTime = time
@@ -54,7 +38,7 @@ function update2(time) {
 function isLose() {
   const rect = ball.rect()
   return rect.right >= window.innerWidth || rect.left <= 0
-}
+  }
 
 function handleLose() {
   const rect = ball.rect()
@@ -66,6 +50,22 @@ function handleLose() {
   ball.reset()
   computerPaddle.reset()
 }
+
+function isLose2() {
+    const rect = ball2.rect()
+    return rect.right >= window.innerWidth || rect.left <= 0
+    }
+  
+  function handleLose2() {
+    const rect = ball2.rect()
+    if (rect.right >= window.innerWidth) {
+      playerScoreElem.textContent = parseInt(playerScoreElem.textContent) - 1
+    } else {
+      computerScoreElem.textContent = parseInt(computerScoreElem.textContent) - 1
+    }
+    ball.reset()
+    computerPaddle.reset()
+  }
 
 
 document.addEventListener("mousemove", e => {
