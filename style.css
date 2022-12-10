@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Yuji+Syuku&display=swap');
 
 
-
 * {
     margin: 0;
     padding: 5px;
@@ -241,7 +240,18 @@ div#LinkedIn {
     grid-column: 3 / span 1;
 }
 
+img {
+    animation: fadeInAnimation 2s
+}
 
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
+}
 
 
 /* Media Query: moblie screen */
