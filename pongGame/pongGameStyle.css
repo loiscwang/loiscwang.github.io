@@ -2,8 +2,9 @@
     box-sizing: border-box;
 }
 
+/* changing colors and make the backgournd and the objects have a nice contracts */
 :root {
-    --hue: 300;
+    --hue: 100;
     --saturation: 50%; 
     --foreground-color: hsl(var(--hue),var(--saturation),75%);
     --background-color: hsl(var(--hue),var(--saturation),20%);
@@ -22,7 +23,7 @@ body {
     background-color: var(--foreground-color);
     top: calc(var(--position)* 1vh); 
     transform: translateY(-50%);
-    width: 1.1vh; 
+    width: 1.1vh;
     height: 10vh; 
 }
 

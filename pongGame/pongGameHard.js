@@ -7,7 +7,7 @@ const playerPaddle = new Paddle(document.getElementById("player-paddle"))
 const computerPaddle = new Paddle(document.getElementById("computer-paddle"))
 const computerPaddle2 = new Paddle(document.getElementById("computer-paddle2"))
 
-//This is for the timing/velcity of the ball////
+//This function count the time and update the background colors, speed of ball and paddle//////////////////////////////////////////
 let lastTime
 function update(time) {
   if (lastTime != null) {
@@ -23,45 +23,44 @@ function update(time) {
 
     document.documentElement.style.setProperty("--hue", hue + delta * 0.01)
 
-    if (isLose()) handleLose() 
-    else if (isLose2()) handleLose2() 
+    if (movingBall()) endGame() 
+    else if (movingBall2()) endGame2() 
   }
 
   lastTime = time
   window.requestAnimationFrame(update)
 }
+console.log()
 
-//This is for the first ball////
-function isLose() {
+//This is for ball1 //////////////////////
+function movingBall() {
   const rect = ball.rect()
   return rect.right >= window.innerWidth || rect.left <= 0
   }
-function handleLose() {
+function endGame() {
   const rect = ball.rect()
   if (rect.right >= window.innerWidth) {
     window.location.href = "pongGameRestart.html";
   } else {
     window.location.href = "pongGameRestart.html";
   }
-  ball.reset()
-  computerPaddle.reset()
 }
+console.log()
 
-//This is for the second ball////
-function isLose2() {
+//This is for ball2 ///////////////////////
+function movingBall2() {
     const rect = ball2.rect()
     return rect.right >= window.innerWidth || rect.left <= 0
 }
-function handleLose2() {
+function endGame2() {
     const rect = ball2.rect()
     if (rect.right >= window.innerWidth) {
         window.location.href = "pongGameRestart.html";
     } else {
         window.location.href = "pongGameRestart.html";
     }
-    ball.reset()
-    computerPaddle.reset()
 }
+console.log()
 
 //The player paddle contorl////////////
 document.addEventListener("mousemove", e => {
