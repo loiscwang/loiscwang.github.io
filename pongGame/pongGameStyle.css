@@ -65,9 +65,6 @@ body {
     transform: translate(-50%, -50%);
     width: 2.6vh; 
     height: 2.6vh; 
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    position: relative;
 }
 
 h1 {
