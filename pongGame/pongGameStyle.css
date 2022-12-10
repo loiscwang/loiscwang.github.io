@@ -15,7 +15,15 @@ body {
     background-color: var(--background-color);
 }
 
-
+.game:after {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 2px dotted var(--foreground-color); 
+}
 .paddle_left, .paddle_right, .paddle_right2{
     --position: 50;
 
